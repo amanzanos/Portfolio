@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Alejandro Manzanos — Frontend Portfolio</title>
+    <meta
+      name="description"
+      content="Portafolio frontend de Alejandro Manzanos — HTML5, CSS3, SASS, JavaScript, TypeScript, Angular, accesibilidad y performance."
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Project styles (external file: styles.css) -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta name="theme-color" content="#0f172a" />
+  </head>
+  <body class="theme-dark">
+    <div class="wrap">
+      <header class="site-header">
+        <div class="brand">
+          <div class="avatar">AM</div>
+          <div>
+            <div class="name">Alejandro Manzanos García</div>
+            <div class="role">
+              Frontend Developer — UI · Angular · TypeScript
+            </div>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="#projects">Proyectos</a>
+          <a href="#experience">Experiencia</a>
+          <a href="#technologies">Tecnologías</a>
+          <a href="#contact">Contacto</a>
+          <a
+            class="cv-link"
+            href="/mnt/data/MANZANOS GARCIA, ALEJANDRO_cv2025-4.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Ver CV</a
+          >
+        </nav>
+
+        <div class="controls">
+          <button
+            id="themeToggle"
+            class="btn ghost"
+            aria-pressed="false"
+            title="Cambiar tema"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <a class="btn primary" href="#contact">Contactar</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" id="home" aria-labelledby="hero-title">
+          <div class="hero-left">
+            <div class="avatar-hover">
+              <!-- Imagen inicial: torso gris -->
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                alt="Avatar genérico"
+                class="avatar-photo"
+              />
+              <!-- Foto real que aparece al hover -->
+              <img
+                src="https://randomuser.me/api/portraits/men/75.jpg"
+                alt="Alejandro Manzanos"
+                class="avatar-real"
+              />
+            </div>
+
+            <h1 id="hero-title">Hola — soy Alejandro</h1>
+            <p class="lead">
+              Desarrollador frontend especializado en interfaces accesibles,
+              rendimiento y arquitectura modular con Angular y TypeScript.
+            </p>
+          </div>
+
+          <div class="hero-right">
+            <div class="carousel">
+              <img
+                src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=1200"
+                class="carousel-image active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1200"
+                class="carousel-image"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200"
+                class="carousel-image"
+              />
+              <div class="dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROJECTS (kept concise) -->
+        <section
+          id="projects"
+          class="section projects"
+          aria-labelledby="projects-title"
+        >
+          <h2 id="projects-title">Proyectos destacados</h2>
+          <p class="section-sub">
+            Interfaces, integraciones y optimizaciones que aportan valor.
+          </p>
+
+          <div class="cards-grid">
+            <article class="card project-card">
+              <img
+                src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6f5d6d9d6f4a2c3e6f3b2c4a9f1e2d3"
+                alt="Panel administrativo"
+              />
+              <div class="card-body">
+                <h3>Panel Administrativo — UI/UX avanzado</h3>
+                <p>
+                  Componentes reutilizables, lazy-loading, internacionalización
+                  y accesibilidad (WCAG).
+                </p>
+                <div class="tags">
+                  <span>Angular</span><span>Sass</span><span>WCAG</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card">
+              <img
+                src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0b5d8f4b9a6f1c2b3d4e5f6a7b8c9d0e"
+                alt="Integración API"
+              />
+              <div class="card-body">
+                <h3>Integración API · Sistema de Datos</h3>
+                <p>
+                  Manejo avanzado de errores, caching y optimización de llamadas
+                  para reducir latencia.
+                </p>
+                <div class="tags">
+                  <span>REST</span><span>MySQL</span><span>Postman</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card">
+              <img
+                src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=8c7b1f6d2a4e5f6b7c8d9e0f1a2b3c4d"
+                alt="Optimización de rendimiento"
+              />
+              <div class="card-body">
+                <h3>Optimización de rendimiento</h3>
+                <p>
+                  Code splitting, lazy assets y mejoras en Core Web Vitals para
+                  mayor tasa de conversión.
+                </p>
+                <div class="tags">
+                  <span>Performance</span><span>Lighthouse</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- EXPERIENCE — nueva sección llamativa con detalle por experiencia -->
+        <section
+          id="experience"
+          class="section experience"
+          aria-labelledby="exp-title"
+        >
+          <h2 id="exp-title">Experiencia profesional</h2>
+          <p class="section-sub">
+            Mis responsabilidades y aportaciones en cada proyecto
+          </p>
+
+          <div class="experience-grid">
+            <div class="experience-card">
+              <img
+                src="https://images.unsplash.com/photo-1529385101872-0a4b8a7b3f1e?q=80&w=800"
+                alt="10Labs"
+              />
+              <div>
+                <div class="experience-title">
+                  Front End Developer Junior — 10Labs
+                </div>
+                <div class="experience-company">Feb 2023 — Ene 2025</div>
+                <ul>
+                  <li>Adaptación y mejora de design system.</li>
+                  <li>
+                    Reducción del bundle inicial en 35% con code splitting.
+                  </li>
+                  <li>
+                    Implementación de pruebas unitarias y optimización de Core
+                    Web Vitals.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="experience-card">
+              <img
+                src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800"
+                alt="ISYC"
+              />
+              <div>
+                <div class="experience-title">
+                  Programador Back End PHP — ISYC
+                </div>
+                <div class="experience-company">Mar 2022 — Jun 2022</div>
+                <ul>
+                  <li>Desarrollo de módulos para Moodle.</li>
+                  <li>Optimización de consultas SQL.</li>
+                  <li>Integración con frontends legados.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="experience-card">
+              <img
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=800"
+                alt="Deloitte"
+              />
+              <div>
+                <div class="experience-title">Delivery Analyst — Deloitte</div>
+                <div class="experience-company">Abr 2021 — Jun 2021</div>
+                <ul>
+                  <li>
+                    Automatización de procesos y análisis funcional en SAP.
+                  </li>
+                  <li>Documentación funcional y soporte cross-funcional.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TECHNOLOGIES — tarjetas pequeñas con icono/foto por tecnología -->
+        <section
+          id="technologies"
+          class="section techs"
+          aria-labelledby="tech-title"
+        >
+          <h2 id="tech-title">Tecnologías</h2>
+          <p class="section-sub">Tarjetas visuales — iconos y nivel.</p>
+
+          <div class="tech-grid">
+            <!-- Examples: images from simpleicons + unsplash / logos hosted on CDN -->
+            <div class="tech-card">
+              <img
+                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+                alt="HTML5 logo"
+              />
+              <div class="tech-info">
+                <strong>HTML5</strong>
+                <span>Avanzado</span>
+              </div>
+            </div>
+
+            <div class="tech-card">
+              <img
+                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
+                alt="CSS3 logo"
+              />
+              <div class="tech-info">
+                <strong>CSS3 / SASS</strong>
+                <span>Avanzado</span>
+              </div>
+            </div>
+
+            <div class="tech-card">
+              <img
+                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+                alt="JS logo"
+              />
+              <div class="tech-info">
+                <strong>JavaScript</strong>
+                <span>Avanzado</span>
+              </div>
+            </div>
+
+            <div class="tech-card">
+              <img
+                src="https://angular.io/assets/images/logos/angular/angular.svg"
+                alt="Angular logo"
+              />
+              <div class="tech-info">
+                <strong>Angular</strong>
+                <span>Intermedio</span>
+              </div>
+            </div>
+
+            <div class="tech-card">
+              <img
+                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
+                alt="TS logo"
+              />
+              <div class="tech-info">
+                <strong>TypeScript</strong>
+                <span>Intermedio</span>
+              </div>
+            </div>
+
+            <div class="tech-card">
+              <img
+                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
+                alt="Git logo"
+              />
+              <div class="tech-info">
+                <strong>Git</strong>
+                <span>Avanzado</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section
+          id="contact"
+          class="section contact"
+          aria-labelledby="contact-title"
+        >
+          <h2 id="contact-title">Contacto</h2>
+          <p class="section-sub">Hablemos sobre tu próximo proyecto</p>
+
+          <div class="contact-grid">
+            <a
+              class="contact-card email"
+              href="mailto:manzanosalejandro.dev@gmail.com"
+            >
+              <i class="fa-solid fa-envelope"></i>
+              <span>Email</span>
+            </a>
+
+            <a class="contact-card phone" href="tel:+34635379486">
+              <i class="fa-solid fa-phone"></i>
+              <span>Llamar</span>
+            </a>
+
+            <a
+              class="contact-card github"
+              href="https://github.com/alejandromanzanos"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+
+            <a
+              class="contact-card linkedin"
+              href="https://www.linkedin.com/in/alejandro-manzanos-garcia-05360a243/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <small>© 2025 Alejandro Manzanos García — Portafolio</small>
+      </footer>
+    </div>
+
+    <!-- app logic file (external): app.js -->
+    <script src="actions.js"></script>
+  </body>
+</html>
