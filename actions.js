@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const heroTitle = document.getElementById("hero-title");
   const text = "Hola — soy Alejandro…";
@@ -26,6 +25,51 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(typeEffect, 100);
   }
   typeEffect();
+
+  const techGrid = document.getElementById("techGrid");
+
+  fetch("/data/tecnologies.json")
+    .then((res) => res.json())
+    .then((techs) => {
+      techs.forEach((tech) => {
+        const card = document.createElement("div");
+        card.className = "tech-card float";
+
+        card.innerHTML = `
+          <img src="${tech.icon}" alt="${tech.name} logo">
+          <div class="tech-info">
+            <strong>${tech.name}</strong>
+            <span>${tech.level}</span>
+          </div>
+        `;
+
+        techGrid.appendChild(card);
+      });
+    })
+    .catch((err) => console.error("Error cargando tecnologías:", err));
+
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = (scrollTop / docHeight) * 100;
+    document.getElementById("scrollProgress").style.width = scrolled + "%";
+  });
+
+  const sections = document.querySelectorAll(".section");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  sections.forEach((section) => observer.observe(section));
 
   // --- CAROUSEL ---
   const slides = document.querySelectorAll(".carousel-image");
@@ -105,7 +149,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const phoneBtn = document.getElementById("phoneBtn");
   const modals = [phoneModal];
 
-  phoneBtn?.addEventListener("click", () => (phoneModal.style.display = "block"));
+  phoneBtn?.addEventListener(
+    "click",
+    () => (phoneModal.style.display = "block")
+  );
 
   modals.forEach((modal) => {
     modal.querySelector(".close").addEventListener("click", () => {
@@ -128,7 +175,8 @@ themeToggle?.addEventListener("click", () => {
   const isPressed = themeToggle.getAttribute("aria-pressed") === "true";
   themeToggle.setAttribute("aria-pressed", String(!isPressed));
 
-  document.documentElement.style.transition = "background .5s ease, color .5s ease";
+  document.documentElement.style.transition =
+    "background .5s ease, color .5s ease";
 
   if (!isPressed) {
     // Light mode
@@ -139,7 +187,10 @@ themeToggle?.addEventListener("click", () => {
     // Dark mode
     document.documentElement.style.setProperty("--bg", "#0f172a");
     document.documentElement.style.setProperty("--text", "#e6eef8");
-    document.documentElement.style.setProperty("--panel", "rgba(255,255,255,0.03)");
+    document.documentElement.style.setProperty(
+      "--panel",
+      "rgba(255,255,255,0.03)"
+    );
   }
 });
 

@@ -26,6 +26,7 @@
 
     <meta name="theme-color" content="#0f172a" />
   </head>
+
   <body class="theme-dark">
     <div class="wrap">
       <header class="site-header">
@@ -76,6 +77,8 @@
       </header>
 
       <main>
+          <div id="scrollProgress"></div>
+
         <section class="hero" id="home" aria-labelledby="hero-title">
           <div class="hero-left">
             <div class="avatar-hover">
@@ -266,7 +269,7 @@
           </div>
         </section>
 
-        <!-- TECHNOLOGIES — tarjetas pequeñas con icono/foto por tecnología -->
+        <!-- TECHNOLOGIES -->
         <section
           id="technologies"
           class="section techs"
@@ -276,140 +279,7 @@
           <p class="section-sub">
             Tarjetas visuales — iconos y nivel de dominio.
           </p>
-
-          <div class="tech-grid">
-            <div class="tech-card">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
-                alt="HTML5 logo"
-              />
-              <div class="tech-info">
-                <strong>HTML5</strong>
-                <span>Avanzado</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
-                alt="CSS3 logo"
-              />
-              <div class="tech-info">
-                <strong>CSS3 / SASS</strong>
-                <span>Avanzado</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-                alt="JS logo"
-              />
-              <div class="tech-info">
-                <strong>JavaScript</strong>
-                <span>Avanzado</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img
-                src="https://angular.io/assets/images/logos/angular/angular.svg"
-                alt="Angular logo"
-              />
-              <div class="tech-info">
-                <strong>Angular</strong>
-                <span>Intermedio</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
-                alt="TS logo"
-              />
-              <div class="tech-info">
-                <strong>TypeScript</strong>
-                <span>Intermedio</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
-                alt="Git logo"
-              />
-              <div class="tech-info">
-                <strong>Git / GitHub</strong>
-                <span>Avanzado</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
-                alt="PHP logo"
-              />
-              <div class="tech-info">
-                <strong>PHP</strong>
-                <span>Intermedio</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                alt="Figma logo"
-              />
-              <div class="tech-info">
-                <strong>Figma</strong>
-                <span>Avanzado</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adobe_xd/adobe_xd-plain.svg"
-                alt="Adobe XD logo"
-              />
-              <div class="tech-info">
-                <strong>Adobe XD</strong>
-                <span>Avanzado</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jest/jest-plain.svg"
-                alt="Jest logo"
-              />
-              <div class="tech-info">
-                <strong>Jest</strong>
-                <span>Intermedio</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
-                alt="VS Code logo"
-              />
-              <div class="tech-info">
-                <strong>Visual Studio Code</strong>
-                <span>Avanzado</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/2965/2965270.png"
-                alt="Agile logo"
-              />
-              <div class="tech-info">
-                <strong>Metodología Agile</strong>
-                <span>Práctica</span>
-              </div>
-            </div>
-          </div>
+          <div class="tech-grid" id="techGrid"></div>
         </section>
 
         <!-- CONTACT -->

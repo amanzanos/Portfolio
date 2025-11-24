@@ -61,6 +61,16 @@ body {
   font-weight: 700;
   font-size: 22px;
 }
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.25s ease;
+}
 /* Base: nav horizontal en desktop */
 .main-nav {
   display: flex;
@@ -332,6 +342,16 @@ body {
   font-weight: 700;
   color: var(--text);
   margin-bottom: 8px;
+}
+.section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .contributions .section-sub {
@@ -762,7 +782,6 @@ body {
     padding: 16px;
   }
 }
-
 
 /* MODAL */
 .modal {
