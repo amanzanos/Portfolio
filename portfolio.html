@@ -22,6 +22,7 @@
 
     <!-- Project styles (external file: styles.css) -->
     <link rel="stylesheet" href="styles.css" />
+    <script src="github.js" defer></script>
 
     <meta name="theme-color" content="#0f172a" />
   </head>
@@ -30,7 +31,7 @@
       <header class="site-header">
         <div class="brand">
           <div class="avatar">AM</div>
-          <div>
+          <div class="info">
             <div class="name">Alejandro Manzanos García</div>
             <div class="role">
               Frontend Developer — UI · Angular · TypeScript
@@ -61,8 +62,17 @@
           >
             <i class="fa-solid fa-moon"></i>
           </button>
-          <a class="btn primary" href="#contact">Contactar</a>
         </div>
+        <button
+          id="hamburgerBtn"
+          class="hamburger"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </header>
 
       <main>
@@ -83,7 +93,7 @@
               />
             </div>
 
-            <h1 id="hero-title">Hola — soy Alejandro</h1>
+            <h1 id="hero-title"></h1>
             <p class="lead">
               Desarrollador frontend especializado en interfaces accesibles,
               rendimiento y arquitectura modular con Angular y TypeScript.
@@ -113,65 +123,74 @@
           </div>
         </section>
 
-        <!-- PROJECTS (kept concise) -->
         <section
-          id="projects"
-          class="section projects"
-          aria-labelledby="projects-title"
+          id="contributions"
+          class="section contributions"
+          aria-labelledby="contributions-title"
         >
-          <h2 id="projects-title">Proyectos destacados</h2>
+          <h2 id="contributions-title">Lo que aporto como programador</h2>
           <p class="section-sub">
-            Interfaces, integraciones y optimizaciones que aportan valor.
+            Funciones y habilidades que aplico en cada proyecto
           </p>
 
           <div class="cards-grid">
-            <article class="card project-card">
+            <!-- Tarjeta 1: Interfaces Profesionales -->
+            <article class="contribution-card">
               <img
-                src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6f5d6d9d6f4a2c3e6f3b2c4a9f1e2d3"
-                alt="Panel administrativo"
+                src="https://images.unsplash.com/photo-1581092795368-0ff9e1c7a81f?w=1200"
+                alt="Diseño UI/UX"
               />
               <div class="card-body">
-                <h3>Panel Administrativo — UI/UX avanzado</h3>
+                <h3>Interfaces Profesionales</h3>
                 <p>
-                  Componentes reutilizables, lazy-loading, internacionalización
-                  y accesibilidad (WCAG).
+                  Diseño y desarrollo de interfaces accesibles y atractivas que
+                  mejoran la experiencia del usuario y aumentan la interacción.
                 </p>
                 <div class="tags">
-                  <span>Angular</span><span>Sass</span><span>WCAG</span>
+                  <span>HTML5</span><span>CSS3 / SASS</span><span>Adobe XD</span
+                  ><span>Figma</span><span>Photoshop</span>
                 </div>
               </div>
             </article>
 
-            <article class="card project-card">
+            <!-- Tarjeta 2: Frontend -->
+            <article class="contribution-card">
               <img
-                src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0b5d8f4b9a6f1c2b3d4e5f6a7b8c9d0e"
-                alt="Integración API"
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200"
+                alt="Frontend"
               />
               <div class="card-body">
-                <h3>Integración API · Sistema de Datos</h3>
+                <h3>Frontend Moderno</h3>
                 <p>
-                  Manejo avanzado de errores, caching y optimización de llamadas
-                  para reducir latencia.
+                  Implementación de interfaces modernas, responsive y
+                  performantes usando HTML, CSS, JavaScript y frameworks
+                  modernos.
                 </p>
                 <div class="tags">
-                  <span>REST</span><span>MySQL</span><span>Postman</span>
+                  <span>HTML5</span><span>CSS3 / SASS</span
+                  ><span>JavaScript</span><span>TypeScript</span
+                  ><span>Responsive</span>
                 </div>
               </div>
             </article>
 
-            <article class="card project-card">
+            <!-- Tarjeta 3: Angular y Optimización -->
+            <article class="contribution-card">
               <img
-                src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=8c7b1f6d2a4e5f6b7c8d9e0f1a2b3c4d"
-                alt="Optimización de rendimiento"
+                src="https://images.unsplash.com/photo-1508780709619-79562169bc64?w=1200"
+                alt="Angular y optimización"
               />
               <div class="card-body">
-                <h3>Optimización de rendimiento</h3>
+                <h3>Angular y Optimización</h3>
                 <p>
-                  Code splitting, lazy assets y mejoras en Core Web Vitals para
-                  mayor tasa de conversión.
+                  Desarrollo de aplicaciones escalables en Angular, optimizando
+                  el rendimiento, Core Web Vitals y la arquitectura modular de
+                  los proyectos.
                 </p>
                 <div class="tags">
-                  <span>Performance</span><span>Lighthouse</span>
+                  <span>Angular</span><span>TypeScript</span
+                  ><span>Performance</span><span>Lazy Loading</span
+                  ><span>Code Splitting</span>
                 </div>
               </div>
             </article>
@@ -192,7 +211,7 @@
           <div class="experience-grid">
             <div class="experience-card">
               <img
-                src="https://images.unsplash.com/photo-1529385101872-0a4b8a7b3f1e?q=80&w=800"
+                src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800"
                 alt="10Labs"
               />
               <div>
@@ -201,14 +220,11 @@
                 </div>
                 <div class="experience-company">Feb 2023 — Ene 2025</div>
                 <ul>
-                  <li>Adaptación y mejora de design system.</li>
+                  <li>Desarrollo de módulos y funcionalidades backend.</li>
                   <li>
-                    Reducción del bundle inicial en 35% con code splitting.
+                    Optimización de consultas y rendimiento de bases de datos.
                   </li>
-                  <li>
-                    Implementación de pruebas unitarias y optimización de Core
-                    Web Vitals.
-                  </li>
+                  <li>Integración con sistemas frontend existentes.</li>
                 </ul>
               </div>
             </div>
@@ -256,11 +272,12 @@
           class="section techs"
           aria-labelledby="tech-title"
         >
-          <h2 id="tech-title">Tecnologías</h2>
-          <p class="section-sub">Tarjetas visuales — iconos y nivel.</p>
+          <h2 id="tech-title">Tecnologías y Herramientas</h2>
+          <p class="section-sub">
+            Tarjetas visuales — iconos y nivel de dominio.
+          </p>
 
           <div class="tech-grid">
-            <!-- Examples: images from simpleicons + unsplash / logos hosted on CDN -->
             <div class="tech-card">
               <img
                 src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
@@ -322,8 +339,74 @@
                 alt="Git logo"
               />
               <div class="tech-info">
-                <strong>Git</strong>
+                <strong>Git / GitHub</strong>
                 <span>Avanzado</span>
+              </div>
+            </div>
+
+            <div class="tech-card">
+              <img
+                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
+                alt="PHP logo"
+              />
+              <div class="tech-info">
+                <strong>PHP</strong>
+                <span>Intermedio</span>
+              </div>
+            </div>
+
+            <div class="tech-card">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+                alt="Figma logo"
+              />
+              <div class="tech-info">
+                <strong>Figma</strong>
+                <span>Avanzado</span>
+              </div>
+            </div>
+
+            <div class="tech-card">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adobe_xd/adobe_xd-plain.svg"
+                alt="Adobe XD logo"
+              />
+              <div class="tech-info">
+                <strong>Adobe XD</strong>
+                <span>Avanzado</span>
+              </div>
+            </div>
+
+            <div class="tech-card">
+              <img
+                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jest/jest-plain.svg"
+                alt="Jest logo"
+              />
+              <div class="tech-info">
+                <strong>Jest</strong>
+                <span>Intermedio</span>
+              </div>
+            </div>
+
+            <div class="tech-card">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                alt="VS Code logo"
+              />
+              <div class="tech-info">
+                <strong>Visual Studio Code</strong>
+                <span>Avanzado</span>
+              </div>
+            </div>
+
+            <div class="tech-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2965/2965270.png"
+                alt="Agile logo"
+              />
+              <div class="tech-info">
+                <strong>Metodología Agile</strong>
+                <span>Práctica</span>
               </div>
             </div>
           </div>
@@ -339,6 +422,7 @@
           <p class="section-sub">Hablemos sobre tu próximo proyecto</p>
 
           <div class="contact-grid">
+            <!-- Email -->
             <a
               class="contact-card email"
               href="mailto:manzanosalejandro.dev@gmail.com"
@@ -347,14 +431,15 @@
               <span>Email</span>
             </a>
 
-            <a class="contact-card phone" href="tel:+34635379486">
+            <!-- Phone -->
+            <button class="contact-card phone" id="phoneBtn">
               <i class="fa-solid fa-phone"></i>
               <span>Llamar</span>
-            </a>
+            </button>
 
             <a
               class="contact-card github"
-              href="https://github.com/alejandromanzanos"
+              href="https://github.com/amanzanos"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -362,6 +447,7 @@
               <span>GitHub</span>
             </a>
 
+            <!-- LinkedIn -->
             <a
               class="contact-card linkedin"
               href="https://www.linkedin.com/in/alejandro-manzanos-garcia-05360a243/"
@@ -371,6 +457,26 @@
               <i class="fa-brands fa-linkedin"></i>
               <span>LinkedIn</span>
             </a>
+          </div>
+        </section>
+
+        <!-- MODALS -->
+        <div id="phoneModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Mi teléfono</h3>
+            <p>📞 635 379 486</p>
+          </div>
+        </div>
+
+        <section
+          id="github-section"
+          class="section github"
+          aria-labelledby="github-title"
+        >
+          <h2 id="github-title">Mis repositorios destacados</h2>
+          <div id="github-container" class="github-container">
+            <!-- Aquí se cargarán los repositorios dinámicamente -->
           </div>
         </section>
       </main>
