@@ -262,6 +262,21 @@ body {
   }
 }
 
+.wave-divider {
+  width: 100%;
+  height: 60px;
+  background: url('/assets/line.svg') no-repeat center;
+  background-size: 100% 60px;
+  animation: linePulse 3s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+/* Animación sutil tipo “breathing” */
+@keyframes linePulse {
+  0%   { transform: scaleY(1); opacity: 0.9; }
+  50%  { transform: scaleY(1.05); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0.9; }
+}
 /* Carrusel */
 .hero-right {
   position: relative;
