@@ -26,25 +26,87 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   typeEffect();
 
-  const techGrid = document.getElementById("techGrid");
-
   fetch("/data/tecnologies.json")
     .then((res) => res.json())
     .then((techs) => {
-      techs.forEach((tech) => {
+      const techGrid = document.getElementById("techGrid");
+
+      let currentPage = 1;
+      const itemsPerPage = 4;
+      let isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+      const paginator = document.createElement("div");
+      paginator.id = "techPaginator";
+      paginator.className = "paginator";
+      paginator.style.display = isMobile ? "flex" : "none";
+      paginator.innerHTML = `
+      <button id="prevTech" disabled>Anterior</button>
+      <button id="nextTech">Siguiente</button>
+    `;
+      techGrid.after(paginator);
+
+      function renderTechs() {
+        techGrid.innerHTML = "";
+
+        if (isMobile) {
+          // cálculos de paginación
+          const start = (currentPage - 1) * itemsPerPage;
+          const end = start + itemsPerPage;
+          const pageItems = techs.slice(start, end);
+
+          pageItems.forEach((tech) => {
+            techGrid.appendChild(createTechCard(tech));
+          });
+
+          // activar / desactivar botones
+          document.getElementById("prevTech").disabled = currentPage === 1;
+          document.getElementById("nextTech").disabled = end >= techs.length;
+        } else {
+          // escritorio → mostrar todas
+          techs.forEach((tech) => {
+            techGrid.appendChild(createTechCard(tech));
+          });
+        }
+      }
+
+      function createTechCard(tech) {
         const card = document.createElement("div");
         card.className = "tech-card float";
 
         card.innerHTML = `
-          <img src="${tech.icon}" alt="${tech.name} logo">
-          <div class="tech-info">
-            <strong>${tech.name}</strong>
-            <span>${tech.level}</span>
-          </div>
-        `;
+        <img src="${tech.icon}" alt="${tech.name} logo">
+        <div class="tech-info">
+          <strong>${tech.name}</strong>
+          <span>${tech.level}</span>
+        </div>
+      `;
+        return card;
+      }
 
-        techGrid.appendChild(card);
+      // botones del paginador
+      document.addEventListener("click", (e) => {
+        if (e.target.id === "prevTech") {
+          currentPage--;
+          renderTechs();
+        }
+        if (e.target.id === "nextTech") {
+          currentPage++;
+          renderTechs();
+        }
       });
+
+      // detectar si cambia de móvil ↔ escritorio
+      window.addEventListener("resize", () => {
+        const nowMobile = window.matchMedia("(max-width: 768px)").matches;
+        if (nowMobile !== isMobile) {
+          isMobile = nowMobile;
+          paginator.style.display = isMobile ? "flex" : "none";
+          currentPage = 1;
+          renderTechs();
+        }
+      });
+
+      renderTechs();
     })
     .catch((err) => console.error("Error cargando tecnologías:", err));
 
@@ -129,7 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.3 }
   );
   bars.forEach((b) => barObserver.observe(b));
-
 
   // --- MODALS ---
   const phoneModal = document.getElementById("phoneModal");
