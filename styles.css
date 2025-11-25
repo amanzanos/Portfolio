@@ -526,6 +526,7 @@ body {
   .cards-grid {
     grid-template-columns: 1fr;
   }
+
 }
 
 /* DEMO SECTION */
@@ -535,7 +536,7 @@ body {
 }
 
 .demo-section h2 {
-  font-size: 2.4rem;
+  font-size: 1.4rem;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
