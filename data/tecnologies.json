@@ -42,7 +42,7 @@
   {
     "name": "Adobe XD",
     "level": "Avanzado",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adobe_xd/adobe_xd-plain.svg"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg"
   },
   {
     "name": "Jest",
@@ -58,5 +58,25 @@
     "name": "Metodología Agile",
     "level": "Práctica",
     "icon": "https://cdn-icons-png.flaticon.com/512/2965/2965270.png"
+  },
+  {
+    "name": "Java",
+    "level": "Intermedio",
+    "icon": "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"
+  },
+  {
+    "name": "Jira",
+    "level": "Intermedio",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"
+  },
+  {
+    "name": "Android",
+    "level": "Intermedio",
+    "icon": "https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg"
+  },
+  {
+    "name": "Photoshop",
+    "level": "Intermedio",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg"
   }
 ]
