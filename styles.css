@@ -214,17 +214,15 @@ body {
   flex-wrap: nowrap; /* evita que el carrusel baje */
 }
 
-/* Avatar */
 .avatar-hover {
   width: 140px;
   height: 140px;
   border-radius: 50%;
   overflow: hidden;
-  cursor: pointer;
   position: relative;
   margin-bottom: 20px;
-  border: 3px solid #7c3aed;
   animation: float 2s ease-in-out infinite;
+  perspective: 600px;
 }
 
 .avatar-hover img {
@@ -235,32 +233,43 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  backface-visibility: hidden;
 }
 
+/* Foto frontal */
+.avatar-photo {
+  transform: rotateY(0deg);
+  animation: flipPhoto 4s infinite linear;
+}
+
+/* Foto trasera */
 .avatar-real {
-  opacity: 0;
+  transform: rotateY(180deg);
+  animation: flipReal 4s infinite linear;
 }
 
-.avatar-hover:hover .avatar-real {
-  opacity: 1;
-  transform: scale(1.1);
+/* La foto frontal gira hacia atrás */
+@keyframes flipPhoto {
+  0%   { transform: rotateY(0deg); }
+  49%  { transform: rotateY(89deg); }
+  50%  { transform: rotateY(90deg); } /* invisible */
+  100% { transform: rotateY(180deg); }
 }
 
-.avatar-hover:hover .avatar-photo {
-  opacity: 0;
-  transform: scale(0.95);
+/* La foto trasera aparece justo al girar */
+@keyframes flipReal {
+  0%   { transform: rotateY(180deg); }
+  49%  { transform: rotateY(179deg); }
+  50%  { transform: rotateY(180deg); } /* empieza a verse */
+  100% { transform: rotateY(360deg); }
 }
 
+/* flotación decorativa */
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
+
 
 .wave-divider {
   width: 100%;

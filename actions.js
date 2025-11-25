@@ -130,19 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   bars.forEach((b) => barObserver.observe(b));
 
-  // --- PROJECTS KEYBOARD ACCESS ---
-  document.getElementById("projectsList")?.addEventListener("keydown", (e) => {
-    if (["Enter", " "].includes(e.key)) {
-      const project = e.target.closest(".project");
-      if (!project) return;
-      e.preventDefault();
-      alert(
-        "Proyecto: " +
-          project.querySelector(".title").textContent +
-          "\n(Demo: abriría proyecto real en entorno de producción)"
-      );
-    }
-  });
 
   // --- MODALS ---
   const phoneModal = document.getElementById("phoneModal");
