@@ -993,14 +993,7 @@ body {
 .modal .close:hover {
   color: #fcd34d;
 }
-/* Footer */
-.site-footer {
-  margin-top: 40px;
-  padding: 16px;
-  text-align: center;
-  font-size: 13px;
-  color: var(--muted);
-}
+
 
 /* Responsive */
 @media (max-width: 980px) {

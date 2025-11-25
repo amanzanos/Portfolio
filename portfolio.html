@@ -19,11 +19,9 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Project styles (external file: styles.css) -->
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/footer/footer.css" />
     <script src="github.js" defer></script>
-
     <meta name="theme-color" content="#0f172a" />
   </head>
 
@@ -35,22 +33,28 @@
           <div class="info">
             <div class="name">Alejandro Manzanos García</div>
             <div class="role">
-              Frontend Developer — UI · Angular · TypeScript
+              <i class="fa-solid fa-code"></i> Frontend Developer — UI · Angular
+              · TypeScript
             </div>
           </div>
         </div>
 
         <nav class="main-nav" aria-label="Navegación principal">
-          <a href="#experience">Experiencia</a>
-          <a href="#technologies">Tecnologías</a>
-          <a href="#contact">Contacto</a>
+          <a href="#experience">
+            <i class="fa-solid fa-briefcase"></i> Experiencia
+          </a>
+          <a href="#technologies">
+            <i class="fa-solid fa-laptop-code"></i> Tecnologías
+          </a>
+          <a href="#contact"> <i class="fa-solid fa-envelope"></i> Contacto </a>
           <a
             class="cv-link"
-            href="/assets//MANZANOS GARCIA, ALEJANDRO_cv2025-4.pdf"
+            href="/assets/MANZANOS GARCIA, ALEJANDRO_cv2025-4.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            >Ver CV</a
           >
+            <i class="fa-solid fa-file-pdf"></i> Ver CV
+          </a>
         </nav>
 
         <div class="controls">
@@ -63,6 +67,7 @@
             <i class="fa-solid fa-moon"></i>
           </button>
         </div>
+
         <button
           id="hamburgerBtn"
           class="hamburger"
@@ -396,10 +401,15 @@
           </div>
         </section>
       </main>
-
-      <footer class="site-footer">
-        <small>© 2025 Alejandro Manzanos García — Portafolio</small>
-      </footer>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          $("#footerContainer").load("/footer/footer.html", function () {
+            console.log("Footer cargado correctamente.");
+          });
+        });
+      </script>
+      <div id="footerContainer"></div>
     </div>
 
     <script src="actions.js"></script>

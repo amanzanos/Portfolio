@@ -1,0 +1,59 @@
+.site-footer {
+  background-color: #0f172a; /* Fondo oscuro */
+  color: #f1f5f9; /* Texto claro */
+  padding: 2rem 1rem;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  border-top: 3px solid #7c3aed; /* Borde superior llamativo */
+}
+
+.site-footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-footer .footer-info p {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.site-footer .footer-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.site-footer .footer-links a {
+  font-size: 1.5rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Colores específicos */
+.site-footer .footer-links a.email { color: #D44638; }      /* Rojo Gmail */
+.site-footer .footer-links a.github { color: #6e5494; }     /* Morado GitHub */
+.site-footer .footer-links a.linkedin { color: #0A66C2; }   /* Azul LinkedIn */
+.site-footer .footer-links a.twitter { color: #1DA1F2; }    /* Azul Twitter */
+
+/* Hover: se amplía y se aclara un poco */
+.site-footer .footer-links a:hover {
+  transform: scale(1.2);
+  filter: brightness(1.3);
+}
+
+/* Responsive: en pantallas pequeñas */
+@media (max-width: 600px) {
+  .site-footer .footer-content {
+    gap: 0.5rem;
+  }
+
+  .site-footer .footer-links a {
+    font-size: 1.2rem;
+  }
+
+  .site-footer .footer-info p {
+    font-size: 0.8rem;
+  }
+}
