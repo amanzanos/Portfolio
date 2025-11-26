@@ -25,7 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(typeEffect, 100);
   }
   typeEffect();
+  document.querySelector(".scroll-down span").addEventListener("click", () => {
+    const nextSection =
+      document.querySelector("#about") ||
+      document.querySelector("main section:nth-of-type(2)");
 
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
+  });
   fetch("/data/tecnologies.json")
     .then((res) => res.json())
     .then((techs) => {
